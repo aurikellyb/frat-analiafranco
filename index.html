@@ -6,18 +6,19 @@
   <title>Fraternidade Espírita Anália Franco</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Font Awesome -->
 </head>
 <body>
 
   <header>
     <div class="container">
       <h1>Fraternidade Espírita Anália Franco</h1>
-      <nav>
+      <nav class="navbar">
         <ul class="menu">
-          <li><a href="#quem-somos">Quem Somos</a></li> 
-          <li><a href="#o-que-fazemos">O que Fazemos</a></li>
-          <li><a href="#como-ajudar">Como Ajudar</a></li>
-          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#quem-somos"><i class="fas fa-users"></i> Quem Somos</a></li> 
+          <li><a href="#o-que-fazemos"><i class="fas fa-hands-helping"></i> O que Fazemos</a></li>
+          <li><a href="#como-ajudar"><i class="fas fa-heart"></i> Como Ajudar</a></li>
+          <li><a href="#galeria"><i class="fas fa-images"></i> Galeria</a></li>
         </ul>
       </nav>
     </div>
@@ -36,10 +37,10 @@
     <section id="o-que-fazemos">
       <div class="container">
         <h2>O que fazemos</h2>
-        <ul>
-          <li><strong>Entrega de café da manhã:</strong> uma vez por mês, levamos pães, frutas, sucos e bolachas para quem precisa.</li>
-          <li><strong>Campanha do cobertor:</strong> no frio, arrecadamos cobertores, toucas e agasalhos usados ou novos para aquecer corpos e corações.</li>
-          <li><strong>Doações diversas:</strong> aceitamos roupas, alimentos não perecíveis e itens de higiene pessoal para distribuir entre famílias vulneráveis.</li>
+        <ul class="list-icon">
+          <li><i class="fas fa-bread-slice"></i> <strong>Entrega de café da manhã:</strong> uma vez por mês, levamos pães, frutas, sucos e bolachas para quem precisa.</li>
+          <li><i class="fas fa-blanket"></i> <strong>Campanha do cobertor:</strong> no frio, arrecadamos cobertores, toucas e agasalhos usados ou novos para aquecer corpos e corações.</li>
+          <li><i class="fas fa-box-open"></i> <strong>Doações diversas:</strong> aceitamos roupas, alimentos não perecíveis e itens de higiene pessoal para distribuir entre famílias vulneráveis.</li>
         </ul>
       </div>
     </section>
@@ -48,18 +49,19 @@
       <div class="container">
         <h2>Como ajudar</h2>
         <p>Todo mundo pode fazer parte dessa mudança. Seja com doações, seja participando das entregas ou ajudando a divulgar nossa causa. Sua contribuição, por menor que seja, faz toda a diferença.</p>
-        
-        <h3>Contato</h3>
-        <ul>
-          <li>Gabriela: <a href="https://wa.me/5511989574607"  target="_blank">+55 11 98957-4607 (WhatsApp)</a></li>
-          <li>Vanessa: <a href="https://wa.me/5511992452115"  target="_blank">+55 11 99245-2115 (WhatsApp)</a></li>
-          <li>Instagram: <a href="https://instagram.com/frat.analiafranco"  target="_blank">@frat.analiafranco</a></li>
-        </ul>
 
         <div class="call-to-action">
           <h3>Quer fazer parte dessa corrente do bem?</h3>
           <p>Fale conosco e descubra como seu gesto pode mudar vidas!</p>
+          <a href="#footer" class="btn">Fale Conosco</a>
         </div>
+
+        <h3>Contato</h3>
+        <ul class="contact-list">
+          <li><i class="fab fa-whatsapp"></i> Gabriela: <a href="https://wa.me/5511989574607"  target="_blank">+55 11 98957-4607</a></li>
+          <li><i class="fab fa-whatsapp"></i> Vanessa: <a href="https://wa.me/5511992452115"  target="_blank">+55 11 99245-2115</a></li>
+          <li><i class="fab fa-instagram"></i> Instagram: <a href="https://instagram.com/frat.analiafranco"  target="_blank">@frat.analiafranco</a></li>
+        </ul>
       </div>
     </section>
 
@@ -83,16 +85,26 @@
     </section>
   </main>
 
-  <footer>
+  <footer id="footer">
     <div class="container">
-      <p>&copy; 2025 Fraternidade Espírita Anália Franco</p>
-      <p>Rua João Turiano, 50 - Jabaquara, SP</p>
-      <p>Contato: Gabriela - (11) 98957-4607 | Vanessa - (11) 99245-2115</p>
-      <p><a href="https://instagram.com/frat.analiafranco"  target="_blank">@frat.analiafranco</a></p>
+      <div class="footer-grid">
+        <div class="footer-info">
+          <h4>Endereço</h4>
+          <p>Rua João Turiano, 50 - Jabaquara, SP</p>
+        </div>
+        <div class="footer-contact">
+          <h4>Contato</h4>
+          <p>Gabriela: (11) 98957-4607<br>Vanessa: (11) 99245-2115</p>
+        </div>
+        <div class="footer-social">
+          <h4>Redes Sociais</h4>
+          <a href="https://instagram.com/frat.analiafranco"  target="_blank"><i class="fab fa-instagram"></i> @frat.analiafranco</a>
+        </div>
+      </div>
+      <p class="copyright">&copy; 2025 Fraternidade Espírita Anália Franco</p>
     </div>
   </footer>
-
-  <!-- JS para o carrossel -->
+  
   <script>
     const track = document.querySelector('.carousel-track');
     const images = Array.from(track.children);
