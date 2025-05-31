@@ -63,27 +63,57 @@ section p {
   font-size: 1rem;
 }
 
-section ul {
-  margin-left: 1rem;
+.call-to-action {
+  background-color: #e8f4ff;
+  border-left: 5px solid #0247a9;
+  padding: 1rem 1.5rem;
+  margin-top: 2rem;
+  border-radius: 5px;
 }
 
-.galeria-fotos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-height: 400px;
   margin-top: 1rem;
 }
 
-.galeria-fotos img {
-  width: 100%;
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-img {
+  min-width: 100%;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
 }
 
-.galeria-fotos img:hover {
-  transform: scale(1.05);
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 2;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0,0,0,0.7);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
 }
 
 footer {
@@ -107,5 +137,10 @@ footer a {
   .menu {
     flex-direction: column;
     gap: 0.5rem;
+  }
+
+  .carousel-img {
+    height: 200px;
+    object-fit: cover;
   }
 }
