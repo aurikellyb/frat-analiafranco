@@ -1,4 +1,3 @@
-/* Reset simples */
 * {
   margin: 0;
   padding: 0;
@@ -6,78 +5,214 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.6;
-  background-color: #ffffff;
+  background-color: #f5f5f5;
   color: #333;
 }
 
-/* Cabeçalho */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+/* Header */
 header {
-  background-color: #0247a9;
+  background: linear-gradient(to right, #013d8c, #0247a9);
   color: white;
-  padding: 2rem 1rem;
+  padding: 2rem 0;
   text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 0.5rem;
 }
 
-/* Seções gerais */
+.navbar .menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.menu li a:hover {
+  opacity: 0.8;
+}
+
+/* Sections */
 section {
-  padding: 2rem 1rem;
-  max-width: 800px;
-  margin: auto;
+  padding: 4rem 1rem;
+  background-color: white;
+  margin-bottom: 1px;
 }
 
 section h2 {
   color: #0247a9;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  border-left: 5px solid #0247a9;
+  padding-left: 1rem;
 }
 
-section p {
+.list-icon li {
   margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
   font-size: 1rem;
 }
 
-/* Contatos */
-.contato {
-  background-color: #f1f1f1;
+.call-to-action {
+  background-color: #e8f4ff;
   border-radius: 8px;
-  padding: 1rem;
-  margin-top: 1rem;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-.contato a {
-  display: block;
+.call-to-action h3 {
   color: #0247a9;
-  text-decoration: none;
   margin-bottom: 0.5rem;
 }
 
-.contato a:hover {
-  text-decoration: underline;
-}
-
-/* Rodapé */
-footer {
+.btn {
+  display: inline-block;
   background-color: #0247a9;
   color: white;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: 0.5rem;
 }
 
-/* Responsividade */
+.btn:hover {
+  background-color: #013d8c;
+}
+
+.contact-list li {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.contact-list i {
+  color: #0247a9;
+  margin-right: 0.5rem;
+}
+
+/* Carrossel */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-img {
+  width: 800px;
+  height: 800px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 2;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #013d8c;
+  color: white;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-info,
+.footer-contact {
+  text-align: left;
+}
+
+.footer-contact i {
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Responsivo */
 @media (max-width: 600px) {
   header h1 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
-  section h2 {
-    font-size: 1.2rem;
+  section {
+    padding: 2rem 1rem;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .carousel-img {
+    width: 100%;
+    height: 300px;
   }
 }
