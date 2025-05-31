@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Fraternidade Espírita Anália Franco</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com"> 
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -28,7 +27,9 @@
     <section id="quem-somos">
       <div class="container">
         <h2>Quem somos</h2>
-        <p>Somos um grupo de voluntários unidos pelo amor ao próximo e pelo desejo de levar conforto, alimento e esperança a quem mais precisa. Inspirados pelos valores da solidariedade e do espiritismo, atuamos em diversas frentes de auxílio com dedicação e carinho.</p>
+        <p>Somos um grupo humilde, mas com uma história de amor ao próximo que já dura muitos anos. Iniciamos com a entrega de sopas mensais, mas durante a pandemia percebemos que poderíamos ser ainda mais efetivos oferecendo café da manhã — uma refeição essencial e nem sempre acessível.</p>
+        <p>Hoje, nos reunimos todo primeiro domingo do mês nas regiões do Jabaquara, São Judas e Conceição (SP), principalmente no Jabaquara e Conceição, levando não apenas comida, mas também carinho e esperança.</p>
+        <p>Nossa sede é na Rua João Turiano, 50, e nosso trabalho é coordenado por Gabriela e Vanessa, com o apoio de um pequeno time de cerca de 7 a 8 pessoas, além da Mocidade Espírita, que se juntou recentemente nessa missão linda!</p>
       </div>
     </section>
 
@@ -36,9 +37,9 @@
       <div class="container">
         <h2>O que fazemos</h2>
         <ul>
-          <li><strong>Entrega de café da manhã:</strong> preparamos e distribuímos alimentos para pessoas em situação de rua.</li>
-          <li><strong>Campanha do cobertor:</strong> arrecadamos cobertores e agasalhos durante o inverno para aquecer vidas.</li>
-          <li><strong>Doações diversas:</strong> recebemos roupas, alimentos e itens de higiene para destinar a famílias em vulnerabilidade.</li>
+          <li><strong>Entrega de café da manhã:</strong> uma vez por mês, levamos pães, frutas, sucos e bolachas para quem precisa.</li>
+          <li><strong>Campanha do cobertor:</strong> no frio, arrecadamos cobertores, toucas e agasalhos usados ou novos para aquecer corpos e corações.</li>
+          <li><strong>Doações diversas:</strong> aceitamos roupas, alimentos não perecíveis e itens de higiene pessoal para distribuir entre famílias vulneráveis.</li>
         </ul>
       </div>
     </section>
@@ -46,26 +47,37 @@
     <section id="como-ajudar">
       <div class="container">
         <h2>Como ajudar</h2>
-        <p>Você pode colaborar com doações, participando das campanhas ou ajudando na organização e entregas. Entre em contato:</p>
+        <p>Todo mundo pode fazer parte dessa mudança. Seja com doações, seja participando das entregas ou ajudando a divulgar nossa causa. Sua contribuição, por menor que seja, faz toda a diferença.</p>
+        
+        <h3>Contato</h3>
         <ul>
           <li>Gabriela: <a href="https://wa.me/5511989574607"  target="_blank">+55 11 98957-4607 (WhatsApp)</a></li>
           <li>Vanessa: <a href="https://wa.me/5511992452115"  target="_blank">+55 11 99245-2115 (WhatsApp)</a></li>
           <li>Instagram: <a href="https://instagram.com/frat.analiafranco"  target="_blank">@frat.analiafranco</a></li>
         </ul>
+
+        <div class="call-to-action">
+          <h3>Quer fazer parte dessa corrente do bem?</h3>
+          <p>Fale conosco e descubra como seu gesto pode mudar vidas!</p>
+        </div>
       </div>
     </section>
 
     <section id="galeria">
       <div class="container">
-        <h2>Galeria de fotos</h2>
-        <div class="galeria-fotos">
-          <img src="img/foto1.png" alt="Foto 1">
-          <img src="img/foto2.png" alt="Foto 2">
-          <img src="img/foto3.png" alt="Foto 3">
-          <img src="img/foto4.png" alt="Foto 4">
-          <img src="img/foto5.png" alt="Foto 5">
-          <img src="img/foto6.png" alt="Foto 6">
-          <img src="img/foto7.png" alt="Foto 7">
+        <h2>Nosso Trabalho em Fotos</h2>
+        <div class="carousel">
+          <button class="carousel-btn prev">&#10094;</button>
+          <div class="carousel-track">
+            <img src="img/foto1.png" alt="Foto 1" class="carousel-img active">
+            <img src="img/foto2.png" alt="Foto 2" class="carousel-img">
+            <img src="img/foto3.png" alt="Foto 3" class="carousel-img">
+            <img src="img/foto4.png" alt="Foto 4" class="carousel-img">
+            <img src="img/foto5.png" alt="Foto 5" class="carousel-img">
+            <img src="img/foto6.png" alt="Foto 6" class="carousel-img">
+            <img src="img/foto7.png" alt="Foto 7" class="carousel-img">
+          </div>
+          <button class="carousel-btn next">&#10095;</button>
         </div>
       </div>
     </section>
@@ -74,9 +86,45 @@
   <footer>
     <div class="container">
       <p>&copy; 2025 Fraternidade Espírita Anália Franco</p>
+      <p>Rua João Turiano, 50 - Jabaquara, SP</p>
       <p>Contato: Gabriela - (11) 98957-4607 | Vanessa - (11) 99245-2115</p>
       <p><a href="https://instagram.com/frat.analiafranco"  target="_blank">@frat.analiafranco</a></p>
     </div>
   </footer>
+
+  <!-- JS para o carrossel -->
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const images = Array.from(track.children);
+    const prevButton = document.querySelector('.carousel-btn.prev');
+    const nextButton = document.querySelector('.carousel-btn.next');
+
+    const imageWidth = images[0].getBoundingClientRect().width;
+
+    // Posiciona as imagens lado a lado
+    images.forEach((img, index) => {
+      img.style.left = `${index * imageWidth}px`;
+    });
+
+    let currentIndex = 0;
+
+    const updateCarousel = () => {
+      track.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+    };
+
+    prevButton.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+      }
+    });
+
+    nextButton.addEventListener('click', () => {
+      if (currentIndex < images.length - 1) {
+        currentIndex++;
+        updateCarousel();
+      }
+    });
+  </script>
 </body>
 </html>
