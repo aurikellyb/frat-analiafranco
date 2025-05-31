@@ -6,9 +6,8 @@
   <title>Fraternidade Espírita Anália Franco</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome via CDN CSS - Sem erro de CORS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"  crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-..." crossorigin="anonymous" />
 </head>
 <body>
 
@@ -16,7 +15,10 @@
     <div class="container">
       <h1>Fraternidade Espírita Anália Franco</h1>
       <nav class="navbar">
-        <ul class="menu">
+        <div class="menu-toggle" id="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="menu" id="menu">
           <li><a href="#quem-somos"><i class="fas fa-users"></i> Quem Somos</a></li> 
           <li><a href="#o-que-fazemos"><i class="fas fa-hands-helping"></i> O que Fazemos</a></li>
           <li><a href="#como-ajudar"><i class="fas fa-heart"></i> Como Ajudar</a></li>
@@ -99,8 +101,17 @@
     </div>
   </footer>
 
-  <!-- JS para o carrossel -->
+  <!-- JS para o menu mobile e carrossel -->
   <script>
+    // Menu hambúrguer
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+
+    // Carrossel
     const track = document.querySelector('.carousel-track');
     const images = Array.from(track.children);
     const prevButton = document.querySelector('.carousel-btn.prev');
