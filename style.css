@@ -5,16 +5,22 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.6;
-  background-color: #ffffff;
+  background-color: #f9f9f9;
   color: #333;
 }
 
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
 header {
-  background-color: #0247a9;
+  background-color: #013d8c;
   color: white;
-  padding: 2rem 1rem;
+  padding: 1.5rem 0;
   text-align: center;
 }
 
@@ -23,15 +29,33 @@ header h1 {
   margin-bottom: 0.5rem;
 }
 
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+}
+
+.menu li a:hover {
+  opacity: 0.8;
+}
+
 section {
-  padding: 2rem 1rem;
-  max-width: 800px;
-  margin: auto;
+  padding: 3rem 1rem;
 }
 
 section h2 {
   color: #0247a9;
   margin-bottom: 1rem;
+  font-size: 1.8rem;
 }
 
 section p {
@@ -39,32 +63,40 @@ section p {
   font-size: 1rem;
 }
 
-.contato {
-  background-color: #f1f1f1;
-  border-radius: 8px;
-  padding: 1rem;
+section ul {
+  margin-left: 1rem;
+}
+
+.galeria-fotos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
   margin-top: 1rem;
 }
 
-.contato a {
-  display: block;
-  color: #0247a9;
-  text-decoration: none;
-  margin-bottom: 0.5rem;
+.galeria-fotos img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
 }
 
-.contato a:hover {
-  text-decoration: underline;
+.galeria-fotos img:hover {
+  transform: scale(1.05);
 }
 
-/* Rodapé */
 footer {
-  background-color: #0247a9;
+  background-color: #013d8c;
   color: white;
   text-align: center;
-  padding: 1rem;
+  padding: 2rem 1rem;
   font-size: 0.9rem;
-  margin-top: 2rem;
+}
+
+footer a {
+  color: white;
+  text-decoration: underline;
 }
 
 @media (max-width: 600px) {
@@ -72,27 +104,8 @@ footer {
     font-size: 1.5rem;
   }
 
-  section h2 {
-    font-size: 1.2rem;
+  .menu {
+    flex-direction: column;
+    gap: 0.5rem;
   }
-}
-
-.galeria-fotos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
-.galeria-fotos img {
-  max-width: 200px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.galeria-fotos img:hover {
-  transform: scale(1.05);
 }
