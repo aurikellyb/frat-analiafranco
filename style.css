@@ -1,3 +1,4 @@
+/* Reset simples */
 * {
   margin: 0;
   padding: 0;
@@ -5,214 +6,78 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   color: #333;
 }
 
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 0 1rem;
-}
-
-/* Header */
+/* Cabeçalho */
 header {
-  background: linear-gradient(to right, #013d8c, #0247a9);
+  background-color: #0247a9;
   color: white;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   margin-bottom: 0.5rem;
 }
 
-.navbar .menu {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 1rem;
-}
-
-.menu li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: opacity 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.menu li a:hover {
-  opacity: 0.8;
-}
-
-/* Sections */
+/* Seções gerais */
 section {
-  padding: 4rem 1rem;
-  background-color: white;
-  margin-bottom: 1px;
+  padding: 2rem 1rem;
+  max-width: 800px;
+  margin: auto;
 }
 
 section h2 {
   color: #0247a9;
-  margin-bottom: 1.5rem;
-  font-size: 2rem;
-  border-left: 5px solid #0247a9;
-  padding-left: 1rem;
+  margin-bottom: 1rem;
 }
 
-.list-icon li {
+section p {
   margin-bottom: 1rem;
-  display: flex;
-  gap: 1rem;
-  align-items: center;
   font-size: 1rem;
 }
 
-.call-to-action {
-  background-color: #e8f4ff;
+/* Contatos */
+.contato {
+  background-color: #f1f1f1;
   border-radius: 8px;
-  padding: 1.5rem;
-  margin-top: 2rem;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  margin-top: 1rem;
 }
 
-.call-to-action h3 {
+.contato a {
+  display: block;
   color: #0247a9;
+  text-decoration: none;
   margin-bottom: 0.5rem;
 }
 
-.btn {
-  display: inline-block;
+.contato a:hover {
+  text-decoration: underline;
+}
+
+/* Rodapé */
+footer {
   background-color: #0247a9;
   color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-  margin-top: 0.5rem;
-}
-
-.btn:hover {
-  background-color: #013d8c;
-}
-
-.contact-list li {
-  margin-bottom: 0.75rem;
-  font-size: 1rem;
-}
-
-.contact-list i {
-  color: #0247a9;
-  margin-right: 0.5rem;
-}
-
-/* Carrossel */
-.carousel {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 300px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.carousel-img {
-  min-width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 1.5rem;
-  z-index: 2;
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
-}
-
-.carousel-btn:hover {
-  background-color: rgba(0, 0, 0, 0.9);
-}
-
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
-}
-
-/* Footer */
-footer {
-  background-color: #013d8c;
-  color: white;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.footer-info,
-.footer-contact,
-.footer-social {
-  text-align: left;
-}
-
-.footer-social a {
-  color: white;
-  text-decoration: none;
-}
-
-.copyright {
   text-align: center;
+  padding: 1rem;
   font-size: 0.9rem;
-  color: #ccc;
+  margin-top: 2rem;
 }
 
-/* Responsivo */
+/* Responsividade */
 @media (max-width: 600px) {
   header h1 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
-  section {
-    padding: 2rem 1rem;
-  }
-
-  .menu {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .carousel-img {
-    height: 200px;
+  section h2 {
+    font-size: 1.2rem;
   }
 }
