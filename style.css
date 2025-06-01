@@ -239,15 +239,12 @@ footer {
     width: 100%;
     max-width: 100%;
   }
-}
-@media (max-width: 425px) {
   .navbar .menu {
     flex-direction: column;
     overflow: hidden;
     max-height: 0;
     transition: max-height 0.3s ease;
   }
-
 
   .navbar .menu.active {
     max-height: 500px; /* altura suficiente para mostrar todos os itens */
