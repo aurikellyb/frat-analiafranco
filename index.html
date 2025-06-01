@@ -16,6 +16,9 @@
     <div class="container">
       <h1>Fraternidade Espírita Anália Franco</h1>
       <nav class="navbar">
+        <div class="hamburger" onclick="toggleMenu()">
+          &#9776; <!-- Ícone de hambúrguer -->
+        </div>
         <ul class="menu">
           <li><a href="#quem-somos"><i class="fas fa-users"></i> Quem Somos</a></li> 
           <li><a href="#o-que-fazemos"><i class="fas fa-hands-helping"></i> O que Fazemos</a></li>
@@ -40,9 +43,9 @@
       <div class="container">
         <h2>O que fazemos</h2>
         <ul class="list-icon">
-          <li><i class="fas fa-bread-slice"></i> <strong>Entrega de café da manhã:</strong> uma vez por mês, levamos pães, frutas, sucos e bolachas para quem precisa.</li>
-          <li><i class="fas fa-blanket"></i> <strong>Campanha do cobertor:</strong> no frio, arrecadamos cobertores, toucas e agasalhos usados ou novos para aquecer corpos e corações.</li>
-          <li><i class="fas fa-box-open"></i> <strong>Doações diversas:</strong> aceitamos roupas, alimentos não perecíveis e itens de higiene pessoal para distribuir entre famílias vulneráveis.</li>
+          <li><i class="fa fa-mug-saucer"></i> <strong>Entrega de café da manhã:</strong> uma vez por mês, levamos pães, frutas, sucos e bolachas para quem precisa.</li>
+          <li><i class="fa fa-rug"></i><strong>Campanha do cobertor:</strong> no frio, arrecadamos cobertores, toucas e agasalhos usados ou novos para aquecer corpos e corações.</li>
+          <li><i class="fa fa-box-open"></i><strong>Doações diversas:</strong> aceitamos roupas, alimentos não perecíveis e itens de higiene pessoal para distribuir entre famílias vulneráveis.</li>
         </ul>
       </div>
     </section>
@@ -101,37 +104,98 @@
 
   <!-- JS para o carrossel -->
   <script>
-    const track = document.querySelector('.carousel-track');
-    const images = Array.from(track.children);
-    const prevButton = document.querySelector('.carousel-btn.prev');
-    const nextButton = document.querySelector('.carousel-btn.next');
+    document.addEventListener('DOMContentLoaded', () => {
+      const track = document.querySelector('.carousel-track');
+      const images = Array.from(track.children);
+      const prevButton = document.querySelector('.carousel-btn.prev');
+      const nextButton = document.querySelector('.carousel-btn.next');
 
-    const imageWidth = images[0].getBoundingClientRect().width;
+      let imageWidth = 0;
+      let itemsPerPage = 3; // Padrão desktop
 
-    // Posiciona as imagens lado a lado
-    images.forEach((img, index) => {
-      img.style.left = `${index * imageWidth}px`;
-    });
+      const calculateImageWidth = () => {
+        if (images[0]) {
+          imageWidth = images[0].getBoundingClientRect().width + 10; // largura + margem
+        }
+      };
 
-    let currentIndex = 0;
+      const positionImages = () => {
+        calculateImageWidth();
+        images.forEach((img, index) => {
+          img.style.position = 'absolute';
+          img.style.left = ${index * imageWidth}px;
+        });
 
-    const updateCarousel = () => {
-      track.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
-    };
+        showSlide(currentIndex);
+      };
 
-    prevButton.addEventListener('click', () => {
-      if (currentIndex > 0) {
-        currentIndex--;
+      function showSlide(index) {
+        images.forEach((img, i) => {
+          img.classList.toggle('active', i >= index && i < index + itemsPerPage);
+        });
+      }
+
+      let currentIndex = 0;
+
+      const updateCarousel = () => {
+        track.style.transform = translateX(-${currentIndex * imageWidth}px);
+      };
+
+      function updateItemsPerPage() {
+        if (window.innerWidth < 600) {
+          itemsPerPage = 1;
+        } else if (window.innerWidth < 900) {
+          itemsPerPage = 2;
+        } else {
+          itemsPerPage = 3;
+        }
+
+        // Ajusta índice caso necessário
+        if (currentIndex >= images.length - itemsPerPage + 1) {
+          currentIndex = Math.min(
+            currentIndex,
+            images.length - itemsPerPage
+          );
+        }
+
+        positionImages();
         updateCarousel();
       }
+
+      prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+          currentIndex -= itemsPerPage;
+          if (currentIndex < 0) currentIndex = 0;
+          updateCarousel();
+          showSlide(currentIndex);
+        }
+      });
+
+      nextButton.addEventListener('click', () => {
+        if (currentIndex < images.length - itemsPerPage + 1) {
+          currentIndex += itemsPerPage;
+          updateCarousel();
+          showSlide(currentIndex);
+        }
+      });
+
+      window.addEventListener('load', () => {
+        updateItemsPerPage();
+        positionImages();
+        updateCarousel();
+      });
+
+      window.addEventListener('resize', () => {
+        updateItemsPerPage();
+        positionImages();
+        updateCarousel();
+      });
     });
 
-    nextButton.addEventListener('click', () => {
-      if (currentIndex < images.length - 1) {
-        currentIndex++;
-        updateCarousel();
-      }
-    });
+  function toggleMenu() {
+    const menu = document.querySelector('.menu');
+    menu.classList.toggle('active');
+  }
   </script>
 </body>
 </html>
