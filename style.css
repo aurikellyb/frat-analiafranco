@@ -20,21 +20,21 @@ body {
 /* Header */
 .header-content {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
 .logo {
-  flex: 1;
   display: flex;
   align-items: center;
+  gap: 10px;
+  flex: 1;
 }
 
 .logo img {
   width: 140px;
   height: auto;
-  transition: width 0.3s ease;
 }
 
 @media (max-width: 768px) {
@@ -52,11 +52,9 @@ header {
 }
 
 header h1 {
-  flex: 2;
-  text-align: center;
-  font-size: 2.2rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
   color: white;
+  margin: 0;
 }
 
 .navbar .menu {
@@ -240,11 +238,11 @@ footer {
   }
 
   header h1 {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
   }
 
   .logo img {
-    width: 120px;
+    width: 100px;
   }
 
   .carousel-img {
