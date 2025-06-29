@@ -38,8 +38,15 @@ header h1 {
 }
 
 .logo img {
-  height: 50px;
-  width: auto;
+  width: 140px;
+  height: auto;
+  transition: width 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .logo img {
+    width: 100px;
+  }
 }
 
 .navbar .menu {
