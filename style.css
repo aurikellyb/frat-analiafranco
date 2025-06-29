@@ -38,7 +38,7 @@ header h1 {
 }
 
 .logo img {
-  width: 200px;
+  width: 180px;
   height: auto;
   transition: width 0.3s ease;
 }
